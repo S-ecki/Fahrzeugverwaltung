@@ -12,14 +12,8 @@ public class Pkw extends Fahrzeug {
 	
 	public Pkw(int id, String ma, String mo, int bj, double gp, int service) {
 		super(id, ma, mo, bj, gp);
-		//without try not 2 errors?
-		//try {
 			if(service < bj) throw new IllegalArgumentException("Error: Servicejahr ungueltig.");
 			this.service = service;
-		//}catch(Exception e) {
-		//	System.out.println(e.getMessage());
-		//}
-		
 	}
 	
 	
