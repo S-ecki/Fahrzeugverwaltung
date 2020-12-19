@@ -49,11 +49,6 @@ public class FahrzeugClient {
 					if(args.length != 9) throw new IllegalArgumentException("Error: Parameter ungueltig.");		//false amount of parameters
 					newF = new Pkw(Integer.parseInt(args[3]), args[4], args[5], Integer.parseInt(args[6]), Double.parseDouble(args[7]), Integer.parseInt(args[8]));
 				}
-//NEW
-				else if(args[2].equals("epkw")) {
-					if(args.length != 9) throw new IllegalArgumentException("Error: Parameter ungueltig.");		//false amount of parameters
-					newF = new Epkw(Integer.parseInt(args[3]), args[4], args[5], Integer.parseInt(args[6]), Double.parseDouble(args[7]), Integer.parseInt(args[8]));
-				}
 
 				else {	
 					//not pkw nor lkw
@@ -90,11 +85,7 @@ public class FahrzeugClient {
 			else if(args[2].equals("pkw")) {
 				System.out.println(management.countPkw());
 			}
-	//NEW		
-			//count epkw
-			else if(args[2].equals("epkw")) {
-				System.out.println(management.countEpkw());
-			}
+				
 			break;
 			
 		case "meanprice":
@@ -108,13 +99,12 @@ public class FahrzeugClient {
 			}
 			break;
 			
-//NEW
 		case "service": 
-            List<Integer> list = management.service(Integer.parseInt(args[2]), Integer.parseInt(args[3]));
-            for(Integer i : list) {
-                System.out.println("Id: " + i);
-            }
-            break;
+           		List<Integer> list = management.service(Integer.parseInt(args[2]), Integer.parseInt(args[3]));
+            		for(Integer i : list) {
+               			System.out.println("Id: " + i);
+		    	}
+            		break;
 		
 			
 		default:
