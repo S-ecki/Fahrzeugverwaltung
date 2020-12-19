@@ -59,12 +59,10 @@ public class SerializedFahrzeugDAO implements FahrzeugDAO {
 			if (file.exists()) {		//add fahrzeug to already saved fahrzeuge
 				existent = getFahrzeugList();
 				
-// - NEW - error if fahrzeug already exists
-// - if something is not matching, delete this
 				for(Fahrzeug f: existent) {
 					if(f.getId() == fahrzeug.getId()) throw new IllegalArgumentException("Error: Fahrzeug bereits vorhanden. (id=" + f.getId() + ")");
 				}
-// - END NEW
+
 				existent.add(fahrzeug);
 				file.delete();			//delete old file (without new fahrzeug)
 			}else {		
@@ -74,11 +72,10 @@ public class SerializedFahrzeugDAO implements FahrzeugDAO {
 			ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream(fileName, true));	//create new persistent file with list
 			writer.writeObject(existent);
 			writer.close();
-// - ALSO NEW
+
 		}catch(IllegalArgumentException e) {
 			System.out.println(e.getMessage());
 			System.exit(1);
-// - END NEW
 		}catch (Exception e) {
 				System.err.println("Fehler bei Serialisierung: " + e.getMessage());
 				System.exit(1);
