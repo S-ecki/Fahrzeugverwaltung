@@ -11,7 +11,6 @@ public abstract class Fahrzeug implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	public static final int thisYear = 2020;
-	//private static List<Integer> allIds = new ArrayList<Integer>();		//only for in-main, not serialized
 	private int id;
 	private String marke;
 	private String modell;
@@ -20,22 +19,16 @@ public abstract class Fahrzeug implements Serializable {
 	
 	
 	public Fahrzeug(int id, String ma, String mo, int bj, double gp) {
-		//without try not 2 errors?
-		//try {
-			//if(allIds.contains(id)) throw new IllegalArgumentException("Error: Fahrzeug bereits vorhanden. (id=" + id + ")");	//only for in-main, not serialized
-			if(ma.isEmpty()) throw new IllegalArgumentException("Error: Parameter ungueltig.");
-			if(mo.isEmpty()) throw new IllegalArgumentException("Error: Parameter ungueltig.");
-			if(bj > 2020) throw new IllegalArgumentException("Error: Baujahr ungueltig.");
-			if(gp <= 0) throw new IllegalArgumentException("Error: Grundpreis ungueltig.");
-			this.id = id;
-			//allIds.add(id);
-			marke = ma;
-			modell = mo;
-			baujahr = bj;
-			grundpreis = gp;
-		//}catch(Exception e) {
-		//	System.out.println(e.getMessage());
-		//}
+		if(ma.isEmpty()) throw new IllegalArgumentException("Error: Parameter ungueltig.");
+		if(mo.isEmpty()) throw new IllegalArgumentException("Error: Parameter ungueltig.");
+		if(bj > 2020) throw new IllegalArgumentException("Error: Baujahr ungueltig.");
+		if(gp <= 0) throw new IllegalArgumentException("Error: Grundpreis ungueltig.");
+		
+		this.id = id;
+		marke = ma;
+		modell = mo;
+		baujahr = bj;
+		grundpreis = gp;
 	}
 	
 	public int getId() {
