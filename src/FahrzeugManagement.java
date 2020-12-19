@@ -44,22 +44,11 @@ public class FahrzeugManagement {
 		return n;
 	}
 	
-	
 	public int countPkw() {
 		List<Fahrzeug> list = fahrzeugDAO.getFahrzeugList();
 		int n = 0;
 		for(Fahrzeug f: list) {
 			if(f instanceof Pkw) ++n;
-		}
-		return n;
-	}
-
-//NEW	alter something in countPKW?
-	public int countEpkw() {
-		List<Fahrzeug> list = fahrzeugDAO.getFahrzeugList();
-		int n = 0;
-		for(Fahrzeug f: list) {
-			if(f instanceof Epkw) ++n;
 		}
 		return n;
 	}
@@ -91,13 +80,11 @@ public class FahrzeugManagement {
 		return oldestIds;
 	}
 	
-//NEW
 	public List<Integer> service(int i, int j){
         List<Fahrzeug> input = fahrzeugDAO.getFahrzeugList();
         List<Integer> help = new ArrayList<Integer>();
         for(Fahrzeug f : input) {
             if(f instanceof Pkw && ((Pkw) f).getService() >= i && ((Pkw) f).getService() <= j) help.add(f.getId());
-
         }
         return help;
     }
