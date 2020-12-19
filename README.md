@@ -1,5 +1,5 @@
 # Fahrzeugverwaltung
- Program to manage cars of an online retailer. <br/>
+ A program to manage cars of an online retailer. <br/>
  The projects main aim was build a Java Application with Dependencies that can persist data through Serialisation.
  It was created for my class [Programmiersprachen und -konzepte](https://ufind.univie.ac.at/de/course.html?lv=051030&semester=2020W) at the University of Vienna.
 
