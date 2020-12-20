@@ -28,6 +28,5 @@ Here is a list of valid calls:
 * "*Program to an Interface, not to an Implementation.*" <br/>
 -my prof, and probably lots of other smart people
 * Dependency Injection/ Inversion of Control <br/>
-It would be easy to change out my implementation of Serialisation, because I used the DAO Interface for Field variables
 * Delegation instead of Inheritance for dynamic usage
 * How to persist data in Java
